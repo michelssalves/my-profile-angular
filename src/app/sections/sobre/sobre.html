@@ -1,14 +1,37 @@
-<section id="sobre" class="section">
+﻿<section id="sobre" class="section">
   <h2>{{ i18n.t('about.title') }}</h2>
   <p>{{ i18n.t('about.text') }}</p>
 
   <h3>{{ i18n.t('about.education') }}</h3>
   <p>{{ i18n.t('about.educationText') }}</p>
 
-  <h3>{{ i18n.t('about.experience') }}</h3>
-  <ul>
-    <li><strong>TCP</strong> - Programador ADVPL</li>
-    <li><strong>Construtora Elevação</strong> - {{ i18n.t('about.job2') }}</li>
-    <li><strong>RDP Petróleo</strong> - Programador PHP</li>
-  </ul>
+  <h3>{{ i18n.t('about.timeline') }}</h3>
+  <div class="timeline">
+    <article class="timeline-item">
+      <header>
+        <strong>TCP</strong>
+        <span>{{ i18n.t('about.tcp.period') }}</span>
+      </header>
+      <p class="role">{{ i18n.t('about.tcp.role') }}</p>
+      <p>{{ i18n.t('about.tcp.desc') }}</p>
+    </article>
+
+    <article class="timeline-item">
+      <header>
+        <strong>Construtora Elevação</strong>
+        <span>{{ i18n.t('about.elevacao.period') }}</span>
+      </header>
+      <p class="role">{{ i18n.t('about.elevacao.role') }}</p>
+      <p>{{ i18n.t('about.elevacao.desc') }}</p>
+    </article>
+
+    <article class="timeline-item">
+      <header>
+        <strong>RDP Petróleo</strong>
+        <span>{{ i18n.t('about.rdp.period') }}</span>
+      </header>
+      <p class="role">{{ i18n.t('about.rdp.role') }}</p>
+      <p>{{ i18n.t('about.rdp.desc') }}</p>
+    </article>
+  </div>
 </section>

@@ -1,4 +1,4 @@
-h2,
+﻿h2,
 h3 {
   margin-top: 0;
   color: #e8f0fd;
@@ -11,7 +11,7 @@ h2 {
 
 h3 {
   margin-top: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   display: inline-block;
   border-bottom: 2px solid rgba(90, 169, 255, 0.45);
 }
@@ -22,32 +22,43 @@ p {
   line-height: 1.75;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.timeline {
+  margin-top: 6px;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
-li {
-  color: var(--muted);
-  line-height: 1.6;
-  padding-left: 16px;
-  position: relative;
+.timeline-item {
+  border: 1px solid rgba(133, 164, 204, 0.22);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(145deg, #101d2f, #0e1828);
 }
 
-li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.62em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+.timeline-item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
 }
 
-strong {
+.timeline-item strong {
   color: #dce8f8;
+}
+
+.timeline-item span {
+  color: #8fb0d6;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.role {
+  color: #b9cde6;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.timeline-item p:last-child {
+  margin-top: 4px;
 }

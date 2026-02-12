@@ -1,16 +1,14 @@
-<section id="contato" class="section contato">
+﻿<section id="contato" class="section contato">
   <h2>{{ i18n.t('contact.title') }}</h2>
   <p>
-    <strong>WhatsApp:</strong>
-    <a href="https://wa.me/5541984382660?text=Ol%C3%A1%20Michel%2C%20tudo%20bem%3F" target="_blank" rel="noopener">
+    <strong>{{ i18n.t('contact.whats') }}:</strong>
+    <a [href]="whatsappLink()" target="_blank" rel="noopener">
       (41) 98438-2660
     </a>
   </p>
   <p>
-    <strong>E-mail:</strong>
-    <a href="mailto:michelssalves@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio&body=Ol%C3%A1%20Michel%2C%20tudo%20bem%3F">
-      michelssalves@gmail.com
-    </a>
+    <strong>{{ i18n.t('contact.email') }}:</strong>
+    <a [href]="emailLink()">michelssalves@gmail.com</a>
   </p>
   <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/michel-alves-05a41813b" target="_blank" rel="noopener">linkedin.com/in/michel-alves-05a41813b</a></p>
   <p><strong>GitHub:</strong> <a href="https://github.com/michelssalves" target="_blank" rel="noopener">github.com/michelssalves</a></p>

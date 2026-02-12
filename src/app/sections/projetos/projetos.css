@@ -1,4 +1,4 @@
-.grid {
+﻿.grid {
   margin-top: 14px;
   display: grid;
   gap: 14px;
@@ -45,11 +45,17 @@ p {
   font-weight: 700;
 }
 
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin-top: auto;
   color: #f8fbff;
   background: linear-gradient(135deg, #2f8ef0, #2978ca);
   text-decoration: none;
@@ -57,6 +63,12 @@ p {
   font-size: 0.9rem;
   padding: 8px 12px;
   border-radius: 10px;
+}
+
+.project-link.secondary {
+  background: #0f1f34;
+  border: 1px solid rgba(133, 164, 204, 0.35);
+  color: #b8d4f6;
 }
 
 .project-link:hover {

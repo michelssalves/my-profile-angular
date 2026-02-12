@@ -16,12 +16,23 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.contact': 'Falar comigo',
     'about.title': 'Sobre',
     'about.text':
-      'Profissional com atuação em desenvolvimento e sustentação de sistemas corporativos, com foco em Protheus, integrações com APIs e aplicações web. Experiência em manutenção de sistemas legados, correção de bugs e evolução de funcionalidades.',
+      'Profissional com atuação em desenvolvimento e sustentação de sistemas corporativos, com foco em Protheus, integrações com APIs e aplicações web.',
     'about.education': 'Formação',
     'about.educationText':
       'Análise e Desenvolvimento de Sistemas, Faculdade Camões (Jan/2020 - Jul/2022).',
-    'about.experience': 'Experiência',
-    'about.job2': 'Analista de Suporte Protheus',
+    'about.timeline': 'Experiência',
+    'about.tcp.role': 'Programador ADVPL',
+    'about.tcp.period': 'Atual',
+    'about.tcp.desc':
+      'Integrações Protheus com APIs de terceiros, relatórios e manutenção corretiva/evolutiva.',
+    'about.elevacao.role': 'Analista de Suporte Protheus',
+    'about.elevacao.period': 'Anterior',
+    'about.elevacao.desc':
+      'Suporte ao usuário em processos fiscais e operacionais: emissão de nota, importação XML e rotinas de operação.',
+    'about.rdp.role': 'Programador PHP',
+    'about.rdp.period': 'Anterior',
+    'about.rdp.desc':
+      'Desenvolvimento em PHP/JavaScript, manutenção de legado, suporte técnico e implantação TOTVS.',
     'skills.title': 'Habilidades',
     'skills.api': 'Integração com APIs REST',
     'skills.support': 'Suporte e manutenção de sistemas corporativos',
@@ -33,9 +44,15 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.p3title': 'Integrações Protheus com API de terceiros',
     'projects.p3':
       'Desenvolvimento de integrações para troca de dados entre ERP e sistemas externos, com manutenção e evolução contínua.',
-    'projects.open': 'Acessar projeto',
+    'projects.open': 'Demo',
+    'projects.source': 'GitHub',
     'contact.title': 'Contato',
-    'contact.rate': 'Valor/hora'
+    'contact.rate': 'Valor/hora',
+    'contact.whats': 'WhatsApp',
+    'contact.email': 'E-mail',
+    'contact.whatsMessage': 'Olá Michel, tudo bem?',
+    'contact.mailSubject': 'Contato pelo portfólio',
+    'contact.mailBody': 'Olá Michel, tudo bem?'
   },
   en: {
     'brand.role': 'Developer',
@@ -50,12 +67,23 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.contact': 'Contact me',
     'about.title': 'About',
     'about.text':
-      'Professional focused on development and maintenance of enterprise systems, with emphasis on Protheus, API integrations and web applications. Experience in legacy maintenance, bug fixes and feature evolution.',
+      'Professional focused on development and maintenance of enterprise systems, with emphasis on Protheus, API integrations and web applications.',
     'about.education': 'Education',
     'about.educationText':
       'Systems Analysis and Development, Camoes College (Jan/2020 - Jul/2022).',
-    'about.experience': 'Experience',
-    'about.job2': 'Protheus Support Analyst',
+    'about.timeline': 'Experience',
+    'about.tcp.role': 'ADVPL Programmer',
+    'about.tcp.period': 'Current',
+    'about.tcp.desc':
+      'Protheus integrations with third-party APIs, reports, and corrective/evolutionary maintenance.',
+    'about.elevacao.role': 'Protheus Support Analyst',
+    'about.elevacao.period': 'Previous',
+    'about.elevacao.desc':
+      'User support in fiscal/operational processes: invoice issuing, XML import, and routine operations.',
+    'about.rdp.role': 'PHP Programmer',
+    'about.rdp.period': 'Previous',
+    'about.rdp.desc':
+      'PHP/JavaScript development, legacy maintenance, technical support, and TOTVS implementation.',
     'skills.title': 'Skills',
     'skills.api': 'REST API Integration',
     'skills.support': 'Support and maintenance of enterprise systems',
@@ -67,14 +95,20 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.p3title': 'Protheus Integrations with Third-Party APIs',
     'projects.p3':
       'Integration development for data exchange between ERP and external systems, with ongoing maintenance and improvements.',
-    'projects.open': 'Open project',
+    'projects.open': 'Demo',
+    'projects.source': 'GitHub',
     'contact.title': 'Contact',
-    'contact.rate': 'Hourly rate'
+    'contact.rate': 'Hourly rate',
+    'contact.whats': 'WhatsApp',
+    'contact.email': 'E-mail',
+    'contact.whatsMessage': 'Hi Michel, how are you?',
+    'contact.mailSubject': 'Contact from portfolio',
+    'contact.mailBody': 'Hi Michel, how are you?'
   },
   es: {
     'brand.role': 'Desarrollador',
-    'nav.about': 'Sobre mi',
-    'nav.skills': 'Skills',
+    'nav.about': 'Sobre mí',
+    'nav.skills': 'Habilidades',
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
     'hero.lead':
@@ -82,28 +116,45 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.projects': 'Ver proyectos',
     'hero.cv': 'Descargar CV',
     'hero.contact': 'Hablar conmigo',
-    'about.title': 'Sobre mi',
+    'about.title': 'Sobre mí',
     'about.text':
-      'Profesional con actuacion en desarrollo y mantenimiento de sistemas corporativos, con foco en Protheus, integraciones con APIs y aplicaciones web. Experiencia en mantenimiento de sistemas legados, correccion de errores y evolucion de funcionalidades.',
-    'about.education': 'Formacion',
+      'Profesional enfocado en desarrollo y mantenimiento de sistemas corporativos, con foco en Protheus, integraciones con APIs y aplicaciones web.',
+    'about.education': 'Formación',
     'about.educationText':
-      'Analisis y Desarrollo de Sistemas, Facultad Camoes (Ene/2020 - Jul/2022).',
-    'about.experience': 'Experiencia',
-    'about.job2': 'Analista de Soporte Protheus',
-    'skills.title': 'Skills',
-    'skills.api': 'Integracion con APIs REST',
+      'Análisis y Desarrollo de Sistemas, Facultad Camões (Ene/2020 - Jul/2022).',
+    'about.timeline': 'Experiencia',
+    'about.tcp.role': 'Programador ADVPL',
+    'about.tcp.period': 'Actual',
+    'about.tcp.desc':
+      'Integraciones Protheus con APIs de terceros, reportes y mantenimiento correctivo/evolutivo.',
+    'about.elevacao.role': 'Analista de Soporte Protheus',
+    'about.elevacao.period': 'Anterior',
+    'about.elevacao.desc':
+      'Soporte al usuario en procesos fiscales y operativos: emisión de factura, importación XML y rutinas de operación.',
+    'about.rdp.role': 'Programador PHP',
+    'about.rdp.period': 'Anterior',
+    'about.rdp.desc':
+      'Desarrollo en PHP/JavaScript, mantenimiento de legado, soporte técnico e implantación TOTVS.',
+    'skills.title': 'Habilidades',
+    'skills.api': 'Integración con APIs REST',
     'skills.support': 'Soporte y mantenimiento de sistemas corporativos',
     'projects.title': 'Proyectos',
     'projects.p1':
-      'Panel para seguimiento de indicadores de RRHH con enfoque en visualizacion de datos y apoyo a decisiones.',
+      'Panel para seguimiento de indicadores de RRHH con enfoque en visualización de datos y apoyo a decisiones.',
     'projects.p2':
-      'Reportes de facturacion con consolidacion de informacion y mejor lectura para operacion y gestion.',
+      'Reportes de facturación con consolidación de información y mejor lectura para operación y gestión.',
     'projects.p3title': 'Integraciones Protheus con API de terceros',
     'projects.p3':
-      'Desarrollo de integraciones para intercambio de datos entre ERP y sistemas externos, con mantenimiento y evolucion continua.',
-    'projects.open': 'Abrir proyecto',
+      'Desarrollo de integraciones para intercambio de datos entre ERP y sistemas externos, con mantenimiento y evolución continua.',
+    'projects.open': 'Demo',
+    'projects.source': 'GitHub',
     'contact.title': 'Contacto',
-    'contact.rate': 'Valor/hora'
+    'contact.rate': 'Valor/hora',
+    'contact.whats': 'WhatsApp',
+    'contact.email': 'E-mail',
+    'contact.whatsMessage': 'Hola Michel, ¿todo bien?',
+    'contact.mailSubject': 'Contacto desde portafolio',
+    'contact.mailBody': 'Hola Michel, ¿todo bien?'
   }
 };
 

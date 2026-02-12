@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://michelssalves.github.io/my-profile-angular/sitemap.xml
