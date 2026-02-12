@@ -1,4 +1,4 @@
-﻿.grid {
+.grid {
   margin-top: 14px;
   display: grid;
   gap: 14px;
@@ -9,22 +9,22 @@ article {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 1px solid rgba(133, 164, 204, 0.22);
+  border: 1px solid var(--section-border);
   border-radius: 14px;
   padding: 16px;
-  background: linear-gradient(150deg, #121f31, #0f1a2a);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  background: var(--surface-elev);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--ink) 20%, transparent);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 article:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 16px 28px color-mix(in srgb, var(--ink) 26%, transparent);
 }
 
 h3 {
   margin: 0;
-  color: #dce9f9;
+  color: var(--heading-soft);
 }
 
 p {
@@ -39,8 +39,8 @@ p {
   margin-top: 4px;
   padding: 5px 10px;
   border-radius: 999px;
-  background: #173229;
-  color: #7be0c4;
+  background: var(--chip-bg);
+  color: var(--chip-fg);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -66,9 +66,9 @@ p {
 }
 
 .project-link.secondary {
-  background: #0f1f34;
-  border: 1px solid rgba(133, 164, 204, 0.35);
-  color: #b8d4f6;
+  background: color-mix(in srgb, var(--surface-soft) 90%, transparent);
+  border: 1px solid var(--section-border);
+  color: var(--heading-soft);
 }
 
 .project-link:hover {

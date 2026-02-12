@@ -1,7 +1,7 @@
-﻿h2,
+h2,
 h3 {
   margin-top: 0;
-  color: #e8f0fd;
+  color: var(--heading);
 }
 
 h2 {
@@ -13,7 +13,7 @@ h3 {
   margin-top: 24px;
   margin-bottom: 12px;
   display: inline-block;
-  border-bottom: 2px solid rgba(90, 169, 255, 0.45);
+  border-bottom: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 p {
@@ -29,11 +29,11 @@ p {
 }
 
 .timeline-item {
-  border: 1px solid rgba(133, 164, 204, 0.22);
+  border: 1px solid var(--section-border);
   border-left: 4px solid var(--accent);
   border-radius: 12px;
   padding: 12px 14px;
-  background: linear-gradient(145deg, #101d2f, #0e1828);
+  background: var(--surface-elev-2);
 }
 
 .timeline-item header {
@@ -44,17 +44,17 @@ p {
 }
 
 .timeline-item strong {
-  color: #dce8f8;
+  color: var(--heading-soft);
 }
 
 .timeline-item span {
-  color: #8fb0d6;
+  color: var(--muted-strong);
   font-size: 0.82rem;
   font-weight: 700;
 }
 
 .role {
-  color: #b9cde6;
+  color: var(--muted-strong);
   margin-top: 6px;
   font-weight: 700;
 }
