@@ -6,33 +6,33 @@ const translations: Record<Language, Record<string, string>> = {
   pt: {
     'brand.role': 'Desenvolvedor',
     'nav.about': 'Sobre',
-    'nav.skills': 'Skills',
+    'nav.skills': 'Habilidades',
     'nav.projects': 'Projetos',
     'nav.contact': 'Contato',
     'hero.lead':
-      'Programador ADVPL e desenvolvedor full stack com experiencia em Protheus, Angular, PHP e integracoes com APIs.',
+      'Programador ADVPL e desenvolvedor full stack com experiência em Protheus, Angular, PHP e integrações com APIs.',
     'hero.projects': 'Ver projetos',
-    'hero.cv': 'Baixar curriculo',
+    'hero.cv': 'Baixar currículo',
     'hero.contact': 'Falar comigo',
     'about.title': 'Sobre',
     'about.text':
-      'Profissional com atuacao em desenvolvimento e sustentacao de sistemas corporativos, com foco em Protheus, integracoes com APIs e aplicacoes web. Experiencia em manutencao de sistemas legados, correcao de bugs e evolucao de funcionalidades.',
-    'about.education': 'Formacao',
+      'Profissional com atuação em desenvolvimento e sustentação de sistemas corporativos, com foco em Protheus, integrações com APIs e aplicações web. Experiência em manutenção de sistemas legados, correção de bugs e evolução de funcionalidades.',
+    'about.education': 'Formação',
     'about.educationText':
-      'Analise e Desenvolvimento de Sistemas, Faculdade Camoes (Jan/2020 - Jul/2022).',
-    'about.experience': 'Experiencia',
-    'about.job2': 'Analista Suporte Protheus',
-    'skills.title': 'Skills',
-    'skills.api': 'Integracao com APIs REST',
-    'skills.support': 'Suporte e manutencao de sistemas corporativos',
+      'Análise e Desenvolvimento de Sistemas, Faculdade Camões (Jan/2020 - Jul/2022).',
+    'about.experience': 'Experiência',
+    'about.job2': 'Analista de Suporte Protheus',
+    'skills.title': 'Habilidades',
+    'skills.api': 'Integração com APIs REST',
+    'skills.support': 'Suporte e manutenção de sistemas corporativos',
     'projects.title': 'Projetos',
     'projects.p1':
-      'Painel para acompanhamento de indicadores de RH com foco em visualizacao de dados e apoio a tomada de decisao.',
+      'Painel para acompanhamento de indicadores de RH com foco em visualização de dados e apoio à tomada de decisão.',
     'projects.p2':
-      'Relatorios de faturamento com consolidacao de informacoes e melhor leitura para operacao e gestao.',
-    'projects.p3title': 'Integracoes Protheus com API de terceiros',
+      'Relatórios de faturamento com consolidação de informações e melhor leitura para operação e gestão.',
+    'projects.p3title': 'Integrações Protheus com API de terceiros',
     'projects.p3':
-      'Desenvolvimento de integracoes para troca de dados entre ERP e sistemas externos, com manutencao e evolucao continua.',
+      'Desenvolvimento de integrações para troca de dados entre ERP e sistemas externos, com manutenção e evolução contínua.',
     'projects.open': 'Acessar projeto',
     'contact.title': 'Contato',
     'contact.rate': 'Valor/hora'
