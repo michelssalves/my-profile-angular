@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 36 24" role="img" aria-label="Estados Unidos">
+  <rect width="36" height="24" rx="3" fill="#fff"/>
+  <g fill="#c8202f">
+    <rect y="0" width="36" height="2.4"/>
+    <rect y="4.8" width="36" height="2.4"/>
+    <rect y="9.6" width="36" height="2.4"/>
+    <rect y="14.4" width="36" height="2.4"/>
+    <rect y="19.2" width="36" height="2.4"/>
+  </g>
+  <rect width="16" height="12.5" rx="2" fill="#21468b"/>
+</svg>
