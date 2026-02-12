@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+﻿import { Component, computed, inject } from '@angular/core';
 import { Language, LanguageService } from '../../shared/language.service';
 
 @Component({
@@ -9,6 +9,13 @@ import { Language, LanguageService } from '../../shared/language.service';
 })
 export class Hero {
   readonly i18n = inject(LanguageService);
+
+  readonly cvLink = computed(() => {
+    const lang = this.i18n.lang();
+    if (lang === 'en') return 'cv/CV.Michel.en.pdf';
+    if (lang === 'es') return 'cv/CV.Michel.es.pdf';
+    return 'cv/CV.Michel.pt.pdf';
+  });
 
   setLanguage(language: Language): void {
     this.i18n.setLanguage(language);

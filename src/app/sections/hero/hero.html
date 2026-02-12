@@ -20,9 +20,10 @@
 
     <div class="actions">
       <a class="cta primary" href="#projetos">{{ i18n.t('hero.projects') }}</a>
-      <a class="cta secondary" href="CV.Michel.pdf" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
+      <a class="cta secondary" [href]="cvLink()" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
       <a class="cta ghost" href="#contato">{{ i18n.t('hero.contact') }}</a>
     </div>
   </div>
 </section>
+
 
