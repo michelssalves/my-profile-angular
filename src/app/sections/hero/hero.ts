@@ -14,7 +14,7 @@ export class Hero {
     const lang = this.i18n.lang();
     if (lang === 'en') return 'cv/CV.Michel.en.pdf';
     if (lang === 'es') return 'cv/CV.Michel.es.pdf';
-    return 'cv/CV.Michel.pt.pdf';
+    return 'CV.Michel.pdf';
   });
 
   setLanguage(language: Language): void {
