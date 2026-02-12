@@ -1,18 +1,18 @@
-<section id="hero" class="section hero">
+ï»¿<section id="hero" class="section hero">
   <div class="hero-media">
-    <img src="/michel-profile.jpg" alt="Foto de Michel" />
+    <img src="michel-profile.jpg" alt="Foto de Michel" />
   </div>
 
   <div class="hero-content">
     <div class="lang-switch" aria-label="Selecionar idioma">
       <button type="button" (click)="setLanguage('pt')" [class.active]="i18n.lang() === 'pt'" aria-label="Portugues">
-        <img src="/flags/br.svg" alt="Português" />
+        <img src="flags/br.svg" alt="PortuguÃªs" />
       </button>
       <button type="button" (click)="setLanguage('en')" [class.active]="i18n.lang() === 'en'" aria-label="English">
-        <img src="/flags/us.svg" alt="English" />
+        <img src="flags/us.svg" alt="English" />
       </button>
       <button type="button" (click)="setLanguage('es')" [class.active]="i18n.lang() === 'es'" aria-label="Espanol">
-        <img src="/flags/es.svg" alt="Español" />
+        <img src="flags/es.svg" alt="EspaÃ±ol" />
       </button>
     </div>
     <h1>Michel Silas Scabia Alves</h1>
@@ -20,8 +20,9 @@
 
     <div class="actions">
       <a class="cta primary" href="#projetos">{{ i18n.t('hero.projects') }}</a>
-      <a class="cta secondary" href="/CV.Michel.pdf" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
+      <a class="cta secondary" href="CV.Michel.pdf" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
       <a class="cta ghost" href="#contato">{{ i18n.t('hero.contact') }}</a>
     </div>
   </div>
 </section>
+
