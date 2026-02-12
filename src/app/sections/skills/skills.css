@@ -1,14 +1,18 @@
+#skills {
+  max-width: 760px;
+}
+
 .skills-list {
   list-style: none;
   padding: 0;
   margin: 18px 0 0;
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .skills-list li {
-  padding: 12px 14px;
+  padding: 13px 14px;
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface-soft) 84%, transparent);
   border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
