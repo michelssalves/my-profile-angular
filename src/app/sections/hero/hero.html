@@ -1,17 +1,20 @@
 ﻿<section id="hero" class="section hero">
   <div class="hero-media">
-    <img src="michel-profile.jpg" alt="Foto de Michel" />
+    <picture>
+      <source srcset="michel-profile.webp" type="image/webp" />
+      <img src="michel-profile.jpg" alt="Foto de Michel" />
+    </picture>
   </div>
 
   <div class="hero-content">
     <div class="lang-switch" aria-label="Selecionar idioma">
-      <button type="button" (click)="setLanguage('pt')" [class.active]="i18n.lang() === 'pt'" aria-label="Portugues">
+      <button type="button" (click)="setLanguage('pt')" [class.active]="i18n.lang() === 'pt'" [attr.aria-current]="i18n.lang() === 'pt' ? 'true' : null" aria-label="Português">
         <img src="flags/br.svg" alt="Português" />
       </button>
-      <button type="button" (click)="setLanguage('en')" [class.active]="i18n.lang() === 'en'" aria-label="English">
+      <button type="button" (click)="setLanguage('en')" [class.active]="i18n.lang() === 'en'" [attr.aria-current]="i18n.lang() === 'en' ? 'true' : null" aria-label="English">
         <img src="flags/us.svg" alt="English" />
       </button>
-      <button type="button" (click)="setLanguage('es')" [class.active]="i18n.lang() === 'es'" aria-label="Espanol">
+      <button type="button" (click)="setLanguage('es')" [class.active]="i18n.lang() === 'es'" [attr.aria-current]="i18n.lang() === 'es' ? 'true' : null" aria-label="Español">
         <img src="flags/es.svg" alt="Español" />
       </button>
     </div>
@@ -25,5 +28,3 @@
     </div>
   </div>
 </section>
-
-

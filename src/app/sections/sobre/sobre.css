@@ -62,3 +62,15 @@ p {
 .timeline-item p:last-child {
   margin-top: 4px;
 }
+
+.results-list {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.results-list li {
+  line-height: 1.6;
+}

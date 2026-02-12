@@ -1,6 +1,9 @@
-import { Injectable, signal } from '@angular/core';
+﻿import { Injectable, signal } from '@angular/core';
 
 export type Language = 'pt' | 'en' | 'es';
+
+const STORAGE_KEY = 'portfolio_lang';
+const SUPPORTED_LANGUAGES: Language[] = ['pt', 'en', 'es'];
 
 const translations: Record<Language, Record<string, string>> = {
   pt: {
@@ -33,6 +36,10 @@ const translations: Record<Language, Record<string, string>> = {
     'about.rdp.period': 'Anterior',
     'about.rdp.desc':
       'Desenvolvimento em PHP/JavaScript, manutenção de legado, suporte técnico e implantação TOTVS.',
+    'about.results': 'Resultados',
+    'about.result1': 'Integrações corporativas entregues com foco em estabilidade de operação.',
+    'about.result2': 'Relatórios orientados à gestão para apoiar decisão e acompanhamento de indicadores.',
+    'about.result3': 'Suporte e evolução contínua em ambiente Protheus de missão crítica.',
     'skills.title': 'Habilidades',
     'skills.api': 'Integração com APIs REST',
     'skills.support': 'Suporte e manutenção de sistemas corporativos',
@@ -84,6 +91,10 @@ const translations: Record<Language, Record<string, string>> = {
     'about.rdp.period': 'Previous',
     'about.rdp.desc':
       'PHP/JavaScript development, legacy maintenance, technical support, and TOTVS implementation.',
+    'about.results': 'Highlights',
+    'about.result1': 'Enterprise integrations delivered with strong operational stability.',
+    'about.result2': 'Management-oriented reports to support decisions and KPI tracking.',
+    'about.result3': 'Continuous support and evolution in mission-critical Protheus environments.',
     'skills.title': 'Skills',
     'skills.api': 'REST API Integration',
     'skills.support': 'Support and maintenance of enterprise systems',
@@ -135,6 +146,10 @@ const translations: Record<Language, Record<string, string>> = {
     'about.rdp.period': 'Anterior',
     'about.rdp.desc':
       'Desarrollo en PHP/JavaScript, mantenimiento de legado, soporte técnico e implantación TOTVS.',
+    'about.results': 'Resultados',
+    'about.result1': 'Integraciones corporativas entregadas con foco en estabilidad operativa.',
+    'about.result2': 'Reportes orientados a gestión para apoyar decisiones e indicadores.',
+    'about.result3': 'Soporte y evolución continua en ambientes críticos de Protheus.',
     'skills.title': 'Habilidades',
     'skills.api': 'Integración con APIs REST',
     'skills.support': 'Soporte y mantenimiento de sistemas corporativos',
@@ -160,13 +175,50 @@ const translations: Record<Language, Record<string, string>> = {
 
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
-  readonly lang = signal<Language>('pt');
+  readonly lang = signal<Language>(this.getInitialLanguage());
 
   setLanguage(language: Language): void {
     this.lang.set(language);
+    this.persistLanguage(language);
   }
 
   t(key: string): string {
     return translations[this.lang()][key] ?? key;
+  }
+
+  private getInitialLanguage(): Language {
+    const stored = this.readStoredLanguage();
+    if (stored) {
+      return stored;
+    }
+
+    if (typeof navigator !== 'undefined') {
+      const browserLanguage = navigator.language.toLowerCase();
+      if (browserLanguage.startsWith('es')) return 'es';
+      if (browserLanguage.startsWith('en')) return 'en';
+    }
+
+    return 'pt';
+  }
+
+  private readStoredLanguage(): Language | null {
+    try {
+      const value = localStorage.getItem(STORAGE_KEY);
+      if (value && SUPPORTED_LANGUAGES.includes(value as Language)) {
+        return value as Language;
+      }
+    } catch {
+      return null;
+    }
+
+    return null;
+  }
+
+  private persistLanguage(language: Language): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, language);
+    } catch {
+      // Ignore storage errors in restricted environments.
+    }
   }
 }
