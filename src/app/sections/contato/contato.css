@@ -1,0 +1,22 @@
+.contato p {
+  margin: 12px 0;
+  color: var(--muted);
+  padding: 10px 12px;
+  border: 1px solid rgba(133, 164, 204, 0.22);
+  border-radius: 10px;
+  background: #0f1a2a;
+}
+
+.contato strong {
+  color: #dce8f8;
+}
+
+.contato a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contato a:hover {
+  text-decoration: underline;
+}

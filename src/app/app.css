@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  --ink: #e8eef8;
+  --muted: #a3b3ca;
+  --line: #2a3b54;
+  --card: #0f1a2a;
+  --accent: #5aa9ff;
+  --accent-2: #31c7a4;
+  --accent-warm: #ff9e5a;
+  color: var(--ink);
+}
+
+main {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 6% 0%, rgba(90, 169, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 100% 30%, rgba(49, 199, 164, 0.16), transparent 28%),
+    linear-gradient(145deg, #070d16, #0b1522 45%, #101b2c);
+  padding: 106px 22px 48px;
+  display: grid;
+  gap: 22px;
+}
+
+.topbar {
+  position: fixed;
+  inset: 14px 12px auto;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  border: 1px solid rgba(133, 164, 204, 0.22);
+  border-radius: 16px;
+  background: rgba(12, 21, 34, 0.78);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.topbar nav {
+  display: flex;
+  gap: 8px;
+}
+
+.topbar a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.topbar .brand {
+  color: var(--ink);
+  font-size: 1.02rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2f8ef0, #24b896);
+  color: #f8fbff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 8px 16px rgba(90, 169, 255, 0.25);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text strong {
+  color: #f1f6ff;
+  font-size: 0.93rem;
+}
+
+.brand-text small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topbar a:hover {
+  color: var(--accent);
+  background: rgba(90, 169, 255, 0.13);
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    inset: 8px 8px auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .topbar nav {
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding-top: 126px;
+  }
+}
