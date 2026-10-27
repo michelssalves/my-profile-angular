@@ -9,4 +9,11 @@ import { LanguageService } from '../../shared/language.service';
 })
 export class Sobre {
   readonly i18n = inject(LanguageService);
+
+  readonly jobs: { key: string; company?: string; current: boolean }[] = [
+    { key: 'tcp', company: 'TCP', current: true },
+    { key: 'freela', current: true },
+    { key: 'elevacao', company: 'Construtora Elevação', current: false },
+    { key: 'rdp', company: 'RDP Petróleo', current: false }
+  ];
 }

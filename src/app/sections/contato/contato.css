@@ -1,22 +1,82 @@
-.contato p {
-  margin: 12px 0;
+:host {
+  display: block;
+}
+
+.contact {
+  display: grid;
+  gap: 22px;
+  padding: 32px 24px;
+  background:
+    radial-gradient(circle at 0% 100%, var(--accent-soft), transparent 55%),
+    var(--tile);
+}
+
+.contact-text {
+  display: grid;
+  gap: 10px;
+}
+
+.contact h2 {
+  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  max-width: 22ch;
+}
+
+.contact-text p {
   color: var(--muted);
-  padding: 10px 12px;
-  border: 1px solid var(--section-border);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--surface-soft) 92%, transparent);
+  max-width: 52ch;
 }
 
-.contato strong {
-  color: var(--heading-soft);
+.contact-links {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
 }
 
-.contato a {
-  color: var(--accent);
-  text-decoration: none;
+.contact-links li {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact-links span {
+  color: var(--muted);
+  font-size: 0.75rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.contato a:hover {
-  text-decoration: underline;
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) {
+  .contact-links a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer {
+  padding: 0 4px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .contact {
+    padding: 48px;
+  }
+
+  .contact-links {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

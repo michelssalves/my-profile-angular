@@ -1,16 +1,19 @@
-﻿<section id="contato" class="section contato">
-  <h2>{{ i18n.t('contact.title') }}</h2>
-  <p>
-    <strong>{{ i18n.t('contact.whats') }}:</strong>
-    <a [href]="whatsappLink()" target="_blank" rel="noopener">
-      (41) 98438-2660
-    </a>
-  </p>
-  <p>
-    <strong>{{ i18n.t('contact.email') }}:</strong>
-    <a [href]="emailLink()">michelssalves@gmail.com</a>
-  </p>
-  <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/michel-alves-05a41813b" target="_blank" rel="noopener">linkedin.com/in/michel-alves-05a41813b</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/michelssalves" target="_blank" rel="noopener">github.com/michelssalves</a></p>
-  <p><strong>{{ i18n.t('contact.rate') }}:</strong> R$ 65,00</p>
+﻿<section id="contato" class="block" aria-labelledby="contact-title">
+  <div class="tile contact">
+    <div class="contact-text">
+      <h2 id="contact-title">{{ i18n.t('contact.title') }}</h2>
+      <p>{{ i18n.t('contact.lead') }}</p>
+    </div>
+    <div class="actions">
+      <a class="btn primary" [href]="whatsappLink()" target="_blank" rel="noopener">{{ i18n.t('contact.whats') }}</a>
+      <a class="btn secondary" [href]="emailLink()">{{ i18n.t('contact.email') }}</a>
+    </div>
+    <ul class="contact-links">
+      <li><span>WhatsApp</span><a [href]="whatsappLink()" target="_blank" rel="noopener">{{ contact.phoneDisplay }}</a></li>
+      <li><span>E-mail</span><a [href]="emailLink()">{{ contact.email }}</a></li>
+      <li><span>LinkedIn</span><a [href]="contact.linkedin" target="_blank" rel="noopener">in/michel-alves</a></li>
+      <li><span>GitHub</span><a [href]="contact.github" target="_blank" rel="noopener">michelssalves</a></li>
+    </ul>
+  </div>
+  <p class="footer">© {{ year }} Michel Alves · {{ i18n.t('footer.text') }}</p>
 </section>

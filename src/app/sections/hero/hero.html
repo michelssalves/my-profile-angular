@@ -1,30 +1,60 @@
-﻿<section id="hero" class="section hero">
-  <div class="hero-media">
+﻿<section id="hero" class="bento" aria-labelledby="hero-title">
+  <article class="tile intro">
+    <p class="eyebrow">{{ i18n.t('hero.eyebrow') }}</p>
+    <h1 id="hero-title">{{ i18n.t('hero.title') }}</h1>
+    <p class="lead">{{ i18n.t('hero.lead') }}</p>
+    <div class="actions">
+      <a class="btn primary" href="#projetos">{{ i18n.t('hero.projects') }}</a>
+      <a class="btn secondary" [href]="cvLink()" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
+    </div>
+  </article>
+
+  <figure class="tile photo">
     <picture>
       <source srcset="michel-profile.webp" type="image/webp" />
-      <img src="michel-profile.jpg" alt="Foto de Michel" />
+      <img src="michel-profile.jpg" [alt]="i18n.t('hero.photoAlt')" width="480" height="480" />
     </picture>
-  </div>
+    <figcaption>
+      <strong>Michel Alves</strong>
+      <span>Michel Silas Scabia Alves</span>
+    </figcaption>
+  </figure>
 
-  <div class="hero-content">
-    <div class="lang-switch" aria-label="Selecionar idioma">
-      <button type="button" (click)="setLanguage('pt')" [class.active]="i18n.lang() === 'pt'" [attr.aria-current]="i18n.lang() === 'pt' ? 'true' : null" aria-label="Português">
-        <img src="flags/br.svg" alt="Português" />
-      </button>
-      <button type="button" (click)="setLanguage('en')" [class.active]="i18n.lang() === 'en'" [attr.aria-current]="i18n.lang() === 'en' ? 'true' : null" aria-label="English">
-        <img src="flags/us.svg" alt="English" />
-      </button>
-      <button type="button" (click)="setLanguage('es')" [class.active]="i18n.lang() === 'es'" [attr.aria-current]="i18n.lang() === 'es' ? 'true' : null" aria-label="Español">
-        <img src="flags/es.svg" alt="Español" />
-      </button>
+  <article class="tile lang">
+    <h2 class="tile-label" id="lang-label">{{ i18n.t('hero.language') }}</h2>
+    <div class="lang-switch" role="group" aria-labelledby="lang-label">
+      @for (option of languages; track option.code) {
+        <button
+          type="button"
+          (click)="setLanguage(option.code)"
+          [class.active]="i18n.lang() === option.code"
+          [attr.aria-pressed]="i18n.lang() === option.code"
+          [attr.aria-label]="option.label"
+        >
+          <img [src]="option.flag" alt="" width="22" height="16" />
+          <span>{{ option.short }}</span>
+        </button>
+      }
     </div>
-    <h1>Michel Silas Scabia Alves</h1>
-    <p class="lead">{{ i18n.t('hero.lead') }}</p>
+  </article>
 
-    <div class="actions">
-      <a class="cta primary" href="#projetos">{{ i18n.t('hero.projects') }}</a>
-      <a class="cta secondary" [href]="cvLink()" target="_blank" rel="noopener">{{ i18n.t('hero.cv') }}</a>
-      <a class="cta ghost" href="#contato">{{ i18n.t('hero.contact') }}</a>
-    </div>
-  </div>
+  <article class="tile stack">
+    <h2 class="tile-label">{{ i18n.t('stack.title') }}</h2>
+    @for (group of stack; track group.labelKey) {
+      <div class="stack-group">
+        <h3>{{ i18n.t(group.labelKey) }}</h3>
+        <ul>
+          @for (item of group.items; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </article>
+
+  <article class="tile available">
+    <h2 class="tile-label"><span class="dot" aria-hidden="true"></span>{{ i18n.t('hero.availableTitle') }}</h2>
+    <p>{{ i18n.t('hero.available') }}</p>
+    <a class="btn ghost" href="#contato">{{ i18n.t('hero.talk') }} <span aria-hidden="true">→</span></a>
+  </article>
 </section>

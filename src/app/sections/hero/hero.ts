@@ -1,5 +1,6 @@
 ﻿import { Component, computed, inject } from '@angular/core';
 import { Language, LanguageService } from '../../shared/language.service';
+import { STACK } from '../../shared/portfolio-data';
 
 @Component({
   selector: 'app-hero',
@@ -9,6 +10,13 @@ import { Language, LanguageService } from '../../shared/language.service';
 })
 export class Hero {
   readonly i18n = inject(LanguageService);
+  readonly stack = STACK;
+
+  readonly languages: { code: Language; short: string; label: string; flag: string }[] = [
+    { code: 'pt', short: 'PT', label: 'Português', flag: 'flags/br.svg' },
+    { code: 'en', short: 'EN', label: 'English', flag: 'flags/us.svg' },
+    { code: 'es', short: 'ES', label: 'Español', flag: 'flags/es.svg' }
+  ];
 
   readonly cvLink = computed(() => {
     const lang = this.i18n.lang();

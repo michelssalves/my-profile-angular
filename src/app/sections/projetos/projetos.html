@@ -1,38 +1,46 @@
-﻿<section id="projetos" class="section">
-  <h2>{{ i18n.t('projects.title') }}</h2>
-  <div class="grid">
-    <article>
-      <h3>Dashboard RH</h3>
-      <p>{{ i18n.t('projects.p1') }}</p>
-      <span class="stack">Stack: Protheus + Angular</span>
-      <div class="project-actions">
-        <a class="project-link" href="https://michelssalves.github.io/poui-dashboard-rh/#/dashboard-rh" target="_blank" rel="noopener">
-          {{ i18n.t('projects.open') }}
-        </a>
-        <a class="project-link secondary" href="https://github.com/michelssalves/poui-dashboard-rh" target="_blank" rel="noopener">
-          {{ i18n.t('projects.source') }}
-        </a>
-      </div>
-    </article>
+﻿<section id="projetos" class="block" aria-labelledby="projects-title">
+  <header class="block-head">
+    <h2 id="projects-title">{{ i18n.t('projects.title') }}</h2>
+    <p>{{ i18n.t('projects.lead') }}</p>
+  </header>
 
-    <article>
-      <h3>Invoice Report</h3>
-      <p>{{ i18n.t('projects.p2') }}</p>
-      <span class="stack">Stack: Protheus + Angular</span>
-      <div class="project-actions">
-        <a class="project-link" href="https://michelssalves.github.io/poui-invoice-report/#/relatorio-rcap" target="_blank" rel="noopener">
-          {{ i18n.t('projects.open') }}
-        </a>
-        <a class="project-link secondary" href="https://github.com/michelssalves/poui-invoice-report" target="_blank" rel="noopener">
-          {{ i18n.t('projects.source') }}
-        </a>
-      </div>
-    </article>
-
-    <article>
-      <h3>{{ i18n.t('projects.p3title') }}</h3>
-      <p>{{ i18n.t('projects.p3') }}</p>
-      <span class="stack">Stack: ADVPL + APIs REST</span>
-    </article>
-  </div>
+  @for (group of groups; track group.category) {
+    <h3 class="group-title">{{ i18n.t(group.titleKey) }}</h3>
+    <div class="bento projects" [class.erp]="group.category === 'erp'">
+      @for (project of group.items; track project.id; let first = $first) {
+        <article class="tile project" [class.featured]="first && group.category === 'client'">
+          <div class="preview" [attr.data-project]="project.id" aria-hidden="true">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+              <em>{{ project.domain }}</em>
+            </div>
+            <div class="preview-body">
+              <strong>{{ project.name }}</strong>
+            </div>
+          </div>
+          <div class="project-body">
+            <h4>{{ project.name }}</h4>
+            <p>{{ i18n.t('projects.' + project.id) }}</p>
+            <ul class="chips" [attr.aria-label]="i18n.t('stack.title')">
+              @for (tech of project.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+            <div class="actions">
+              <a class="btn primary small" [href]="project.url" target="_blank" rel="noopener">
+                {{ i18n.t(project.repo ? 'projects.demo' : 'projects.visit') }}
+                <span class="sr-only">— {{ project.name }} ({{ i18n.t('projects.newTab') }})</span>
+              </a>
+              @if (project.repo) {
+                <a class="btn secondary small" [href]="project.repo" target="_blank" rel="noopener">
+                  {{ i18n.t('projects.source') }}
+                  <span class="sr-only">— {{ project.name }} ({{ i18n.t('projects.newTab') }})</span>
+                </a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  }
 </section>

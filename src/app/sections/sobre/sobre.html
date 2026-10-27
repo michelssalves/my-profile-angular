@@ -1,44 +1,36 @@
-﻿<section id="sobre" class="section">
-  <h2>{{ i18n.t('about.title') }}</h2>
-  <p>{{ i18n.t('about.text') }}</p>
+﻿<section id="experiencia" class="block" aria-labelledby="exp-title">
+  <header class="block-head">
+    <h2 id="exp-title">{{ i18n.t('exp.title') }}</h2>
+  </header>
 
-  <h3>{{ i18n.t('about.education') }}</h3>
-  <p>{{ i18n.t('about.educationText') }}</p>
-
-  <h3>{{ i18n.t('about.timeline') }}</h3>
-  <div class="timeline">
-    <article class="timeline-item">
-      <header>
-        <strong>TCP</strong>
-        <span>{{ i18n.t('about.tcp.period') }}</span>
-      </header>
-      <p class="role">{{ i18n.t('about.tcp.role') }}</p>
-      <p>{{ i18n.t('about.tcp.desc') }}</p>
+  <div class="bento exp">
+    <article class="tile timeline-tile">
+      <ol class="timeline">
+        @for (job of jobs; track job.key) {
+          <li>
+            <div class="job-head">
+              <strong>{{ job.company ?? i18n.t('exp.' + job.key + '.company') }}</strong>
+              <span class="period" [class.current]="job.current">{{ i18n.t('exp.' + job.key + '.period') }}</span>
+            </div>
+            <p class="role">{{ i18n.t('exp.' + job.key + '.role') }}</p>
+            <p>{{ i18n.t('exp.' + job.key + '.desc') }}</p>
+          </li>
+        }
+      </ol>
     </article>
 
-    <article class="timeline-item">
-      <header>
-        <strong>Construtora Elevação</strong>
-        <span>{{ i18n.t('about.elevacao.period') }}</span>
-      </header>
-      <p class="role">{{ i18n.t('about.elevacao.role') }}</p>
-      <p>{{ i18n.t('about.elevacao.desc') }}</p>
+    <article class="tile how">
+      <h3 class="tile-label">{{ i18n.t('exp.howTitle') }}</h3>
+      <ol class="how-list">
+        <li>{{ i18n.t('exp.how1') }}</li>
+        <li>{{ i18n.t('exp.how2') }}</li>
+        <li>{{ i18n.t('exp.how3') }}</li>
+      </ol>
     </article>
 
-    <article class="timeline-item">
-      <header>
-        <strong>RDP Petróleo</strong>
-        <span>{{ i18n.t('about.rdp.period') }}</span>
-      </header>
-      <p class="role">{{ i18n.t('about.rdp.role') }}</p>
-      <p>{{ i18n.t('about.rdp.desc') }}</p>
+    <article class="tile education">
+      <h3 class="tile-label">{{ i18n.t('exp.education') }}</h3>
+      <p>{{ i18n.t('exp.educationText') }}</p>
     </article>
   </div>
-
-  <h3>{{ i18n.t('about.results') }}</h3>
-  <ul class="results-list">
-    <li>{{ i18n.t('about.result1') }}</li>
-    <li>{{ i18n.t('about.result2') }}</li>
-    <li>{{ i18n.t('about.result3') }}</li>
-  </ul>
 </section>
