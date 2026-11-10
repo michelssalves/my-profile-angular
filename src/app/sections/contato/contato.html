@@ -17,8 +17,8 @@
     <ul class="contact-links">
       <li><span><img src="icons/whatsapp.svg" alt="" width="14" height="14" />WhatsApp</span><a [href]="whatsappLink()" target="_blank" rel="noopener">{{ contact.phoneDisplay }}</a></li>
       <li><span><img src="icons/gmail.svg" alt="" width="14" height="11" />E-mail</span><a [href]="emailLink()">{{ contact.email }}</a></li>
-      <li><span>LinkedIn</span><a [href]="contact.linkedin" target="_blank" rel="noopener">in/michel-alves</a></li>
-      <li><span>GitHub</span><a [href]="contact.github" target="_blank" rel="noopener">michelssalves</a></li>
+      <li><span><img src="icons/linkedin.svg" alt="" width="14" height="14" />LinkedIn</span><a [href]="contact.linkedin" target="_blank" rel="noopener">in/michel-alves</a></li>
+      <li><span><img src="icons/github.svg" alt="" width="14" height="14" class="invert-dark" />GitHub</span><a [href]="contact.github" target="_blank" rel="noopener">michelssalves</a></li>
     </ul>
   </div>
   <p class="footer">© {{ year }} Michel Alves · {{ i18n.t('footer.text') }}</p>
