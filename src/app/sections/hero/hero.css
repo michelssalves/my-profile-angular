@@ -106,11 +106,6 @@
   color: #f4f7fc;
 }
 
-.photo figcaption span {
-  font-size: 0.8rem;
-  opacity: 0.85;
-}
-
 .lang-switch {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
