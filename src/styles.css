@@ -309,11 +309,11 @@ body:not(.theme-light) img.invert-dark {
 }
 
 /* Cards surgem ao rolar; so esconde quando o JS ligou o efeito */
-body.fx-reveal :is(.tile, .block-head, .group-title):not(.is-visible) {
+.reveal-pending {
   opacity: 0;
 }
 
-body.fx-reveal .is-visible {
+.is-visible {
   animation: reveal-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
 }
 
@@ -337,11 +337,11 @@ body.fx-reveal .is-visible {
     animation: none;
   }
 
-  body.fx-reveal :is(.tile, .block-head, .group-title):not(.is-visible) {
+  .reveal-pending {
     opacity: 1;
   }
 
-  body.fx-reveal .is-visible {
+  .is-visible {
     animation: none;
   }
 }

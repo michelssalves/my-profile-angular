@@ -71,6 +71,7 @@ export class App {
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-pending');
             entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
@@ -79,8 +80,11 @@ export class App {
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
 
-    document.body.classList.add('fx-reveal');
-    document.querySelectorAll('.tile, .block-head, .group-title').forEach((el) => observer.observe(el));
+    // So esconde o que esta sendo observado; elemento recriado depois (ex.: troca de bloco) aparece direto
+    document.querySelectorAll('.tile, .block-head, .group-title').forEach((el) => {
+      el.classList.add('reveal-pending');
+      observer.observe(el);
+    });
     this.destroyRef.onDestroy(() => observer.disconnect());
   }
 

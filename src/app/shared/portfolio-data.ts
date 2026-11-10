@@ -1,4 +1,4 @@
-export type ProjectCategory = 'client' | 'erp';
+﻿export type ProjectCategory = 'client' | 'erp';
 
 export interface Project {
   id: string;
@@ -7,6 +7,7 @@ export interface Project {
   domain: string;
   url: string;
   repo?: string;
+  image: string;
   stack: string[];
 }
 
@@ -24,6 +25,7 @@ export interface StackGroup {
 export const PROJECTS: Project[] = [
   {
     id: 'memorial',
+    image: 'projects/memorial.webp',
     name: 'Funerária Memorial da Paz',
     category: 'client',
     domain: 'funerariamemorialdapazsc.com.br',
@@ -32,6 +34,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'santoanjo',
+    image: 'projects/santoanjo.webp',
     name: 'Santo Anjo Funerária',
     category: 'client',
     domain: 'funerariasantoanjo.com.br',
@@ -40,6 +43,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'confianca',
+    image: 'projects/confianca.webp',
     name: 'Funerária Confiança',
     category: 'client',
     domain: 'funerariaconfianca.com.br',
@@ -48,6 +52,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'mural',
+    image: 'projects/mural.webp',
     name: 'Mural de Homenagens',
     category: 'client',
     domain: 'recordacoes.online',
@@ -56,6 +61,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'dashboardrh',
+    image: 'projects/dashboardrh.webp',
     name: 'Dashboard RH',
     category: 'erp',
     domain: 'poui-dashboard-rh',
@@ -65,6 +71,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'invoice',
+    image: 'projects/invoice.webp',
     name: 'Invoice Report',
     category: 'erp',
     domain: 'poui-invoice-report',
