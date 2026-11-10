@@ -23,6 +23,10 @@ body {
   --radius-sm: 12px;
   --gap: 14px;
   --max: 1120px;
+  --grad-1: #6aa8ff;
+  --grad-2: #a78bfa;
+  --grad-3: #22d3ee;
+  --grid-line: rgba(148, 170, 204, 0.05);
 
   margin: 0;
   font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
@@ -54,6 +58,10 @@ body.theme-light {
   --chip-fg: #34445c;
   --shadow: 0 1px 2px rgba(16, 26, 43, 0.04), 0 14px 32px rgba(16, 26, 43, 0.07);
   --topbar-bg: rgba(255, 255, 255, 0.85);
+  --grad-1: #1f5fbf;
+  --grad-2: #7c3aed;
+  --grad-3: #0e7490;
+  --grid-line: rgba(20, 40, 70, 0.05);
 }
 
 *,
@@ -195,6 +203,11 @@ a {
   color: var(--ink);
 }
 
+.btn.whats {
+  background: #25d366;
+  color: #062b14;
+}
+
 .btn.ghost {
   padding: 0;
   min-height: 44px;
@@ -211,6 +224,11 @@ a {
   .btn.primary:hover {
     transform: translateY(-1px);
     background: color-mix(in srgb, var(--accent) 88%, var(--heading));
+  }
+
+  .btn.whats:hover {
+    transform: translateY(-1px);
+    background: #1ebe5b;
   }
 
   .btn.secondary:hover {
@@ -251,5 +269,79 @@ a {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ---------- Efeitos visuais ---------- */
+
+/* Grade sutil no fundo (inspirada no Thainan Prado) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%);
+}
+
+/* Logos pretos (Next.js) somem no tema escuro */
+body:not(.theme-light) img.invert-dark {
+  filter: invert(1);
+}
+
+/* Texto em gradiente animado */
+.gradient-text {
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 8s linear infinite;
+}
+
+@keyframes gradient-shift {
+  to { background-position: 300% 0; }
+}
+
+/* Cards surgem ao rolar; so esconde quando o JS ligou o efeito */
+body.fx-reveal :is(.tile, .block-head, .group-title):not(.is-visible) {
+  opacity: 0;
+}
+
+body.fx-reveal .is-visible {
+  animation: reveal-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+/* Brilho na borda do card ao passar o mouse */
+@media (hover: hover) {
+  .tile:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), 0 18px 50px color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+  }
+
+  body.fx-reveal :is(.tile, .block-head, .group-title):not(.is-visible) {
+    opacity: 1;
+  }
+
+  body.fx-reveal .is-visible {
+    animation: none;
   }
 }

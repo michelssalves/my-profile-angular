@@ -1,4 +1,7 @@
-﻿<a class="skip-link" href="#conteudo">{{ i18n.t('nav.skip') }}</a>
+﻿<app-fx-background></app-fx-background>
+<div class="scroll-progress" aria-hidden="true" [style.transform]="'scaleX(' + scrollProgress() + ')'"></div>
+
+<a class="skip-link" href="#conteudo">{{ i18n.t('nav.skip') }}</a>
 
 <header class="topbar">
   <a class="brand" href="#hero">
@@ -28,7 +31,28 @@
 
 <main id="conteudo">
   <app-hero></app-hero>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      @for (item of marqueeItems; track $index) {
+        <span class="marquee-item">
+          <img [src]="item.icon" alt="" width="22" height="22" [class.invert-dark]="item.invertOnDark" />
+          {{ item.name }}
+        </span>
+      }
+    </div>
+  </div>
   <app-projetos></app-projetos>
   <app-sobre></app-sobre>
   <app-contato></app-contato>
 </main>
+
+<a
+  class="whats-float"
+  [href]="whatsappLink()"
+  target="_blank"
+  rel="noopener"
+  [title]="i18n.t('contact.whats')"
+  [attr.aria-label]="i18n.t('contact.whats')"
+>
+  <img src="icons/whatsapp-white.svg" alt="" width="30" height="30" />
+</a>

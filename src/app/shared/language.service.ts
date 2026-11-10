@@ -14,7 +14,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.experience': 'Experiência',
     'nav.contact': 'Contato',
     'hero.eyebrow': 'Desenvolvedor full stack',
-    'hero.title': 'Sites, sistemas e integrações que funcionam no dia a dia do negócio.',
+    'hero.title': 'Sites, sistemas e integrações',
+    'hero.titleHighlight': 'que funcionam no dia a dia do negócio.',
     'hero.lead':
       'Construo desde sites institucionais em Next.js até telas e APIs integradas ao ERP Protheus. Do layout ao deploy, com foco em código simples de manter.',
     'hero.projects': 'Ver projetos',
@@ -89,7 +90,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
     'hero.eyebrow': 'Full stack developer',
-    'hero.title': 'Websites, systems and integrations that work in day-to-day business.',
+    'hero.title': 'Websites, systems and integrations',
+    'hero.titleHighlight': 'that work in day-to-day business.',
     'hero.lead':
       'I build everything from Next.js business websites to screens and APIs integrated with the Protheus ERP. From layout to deploy, focused on code that is easy to maintain.',
     'hero.projects': 'View projects',
@@ -164,7 +166,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.experience': 'Experiencia',
     'nav.contact': 'Contacto',
     'hero.eyebrow': 'Desarrollador full stack',
-    'hero.title': 'Sitios, sistemas e integraciones que funcionan en el día a día del negocio.',
+    'hero.title': 'Sitios, sistemas e integraciones',
+    'hero.titleHighlight': 'que funcionan en el día a día del negocio.',
     'hero.lead':
       'Construyo desde sitios institucionales en Next.js hasta pantallas y APIs integradas al ERP Protheus. Del diseño al deploy, con foco en código fácil de mantener.',
     'hero.projects': 'Ver proyectos',

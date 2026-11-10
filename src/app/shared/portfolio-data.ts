@@ -10,9 +10,15 @@ export interface Project {
   stack: string[];
 }
 
+export interface StackItem {
+  name: string;
+  icon: string;
+  invertOnDark?: boolean;
+}
+
 export interface StackGroup {
   labelKey: string;
-  items: string[];
+  items: StackItem[];
 }
 
 export const PROJECTS: Project[] = [
@@ -69,9 +75,33 @@ export const PROJECTS: Project[] = [
 ];
 
 export const STACK: StackGroup[] = [
-  { labelKey: 'stack.front', items: ['Angular', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS'] },
-  { labelKey: 'stack.back', items: ['PHP', 'Laravel', 'Node.js', 'REST APIs', 'SQL'] },
-  { labelKey: 'stack.erp', items: ['Protheus', 'ADVPL', 'TLPP', 'PO-UI'] }
+  {
+    labelKey: 'stack.front',
+    items: [
+      { name: 'Angular', icon: 'stack/angular.svg' },
+      { name: 'React', icon: 'stack/react.svg' },
+      { name: 'Next.js', icon: 'stack/nextjs.svg', invertOnDark: true },
+      { name: 'Vue.js', icon: 'stack/vuejs.svg' }
+    ]
+  },
+  {
+    labelKey: 'stack.back',
+    items: [
+      { name: 'PHP', icon: 'stack/php.svg' },
+      { name: 'Laravel', icon: 'stack/laravel.svg' },
+      { name: 'REST APIs', icon: 'stack/rest.svg' },
+      { name: 'SQL', icon: 'stack/microsoftsqlserver.svg' }
+    ]
+  },
+  {
+    labelKey: 'stack.erp',
+    items: [
+      { name: 'Protheus', icon: 'stack/protheus.svg' },
+      { name: 'ADVPL', icon: 'stack/advpl.svg' },
+      { name: 'TLPP', icon: 'stack/tlpp.svg' },
+      { name: 'PO-UI', icon: 'stack/poui.svg' }
+    ]
+  }
 ];
 
 export const CONTACT = {
@@ -81,3 +111,7 @@ export const CONTACT = {
   linkedin: 'https://linkedin.com/in/michel-alves-05a41813b',
   github: 'https://github.com/michelssalves'
 };
+
+export function whatsappUrl(message: string): string {
+  return `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}

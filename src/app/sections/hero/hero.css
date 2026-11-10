@@ -17,6 +17,28 @@
   max-width: 20ch;
 }
 
+.intro h1 .highlight {
+  display: inline;
+}
+
+.eyebrow {
+  min-height: 1.3em;
+}
+
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: currentColor;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
 .lead {
   color: var(--muted);
   font-size: 1.02rem;
@@ -27,9 +49,41 @@
   padding: 0;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+  border: 0;
+  isolation: isolate;
+  box-shadow: var(--shadow), 0 0 40px color-mix(in srgb, var(--grad-2) 28%, transparent);
 }
 
-.photo picture,
+/* Borda em gradiente girando + brilho (inspirado no Thainan Prado e no Rhuan Bello) */
+.photo::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  z-index: -2;
+  background: conic-gradient(from 0deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-1));
+  animation: spin 6s linear infinite;
+}
+
+.photo::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  z-index: -1;
+  border-radius: calc(var(--radius) - 3px);
+  background: var(--tile);
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}
+
+.photo picture {
+  position: absolute;
+  inset: 3px;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 3px);
+}
+
 .photo img {
   display: block;
   width: 100%;
@@ -43,7 +97,8 @@
 
 .photo figcaption {
   position: absolute;
-  inset: auto 0 0;
+  inset: auto 3px 3px;
+  border-radius: 0 0 calc(var(--radius) - 3px) calc(var(--radius) - 3px);
   display: grid;
   gap: 2px;
   padding: 40px 18px 16px;
@@ -125,12 +180,54 @@
 }
 
 .stack-group li {
-  padding: 5px 11px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px 5px 8px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--tile-2);
   font-size: 0.82rem;
   font-weight: 600;
+}
+
+.stack-group li img {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Chip sobe e ganha sublinhado em gradiente (inspirado no Rhuan Bello) */
+.stack-group li::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .stack-group li:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+
+  .stack-group li:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo::before,
+  .caret {
+    animation: none;
+  }
 }
 
 .available {

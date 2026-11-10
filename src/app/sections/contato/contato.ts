@@ -1,6 +1,6 @@
 ﻿import { Component, computed, inject } from '@angular/core';
 import { LanguageService } from '../../shared/language.service';
-import { CONTACT } from '../../shared/portfolio-data';
+import { CONTACT, whatsappUrl } from '../../shared/portfolio-data';
 
 @Component({
   selector: 'app-contato',
@@ -13,10 +13,7 @@ export class Contato {
   readonly contact = CONTACT;
   readonly year = new Date().getFullYear();
 
-  readonly whatsappLink = computed(() => {
-    const msg = encodeURIComponent(this.i18n.t('contact.whatsMessage'));
-    return `https://wa.me/${CONTACT.whatsappNumber}?text=${msg}`;
-  });
+  readonly whatsappLink = computed(() => whatsappUrl(this.i18n.t('contact.whatsMessage')));
 
   readonly emailLink = computed(() => {
     const subject = encodeURIComponent(this.i18n.t('contact.mailSubject'));
